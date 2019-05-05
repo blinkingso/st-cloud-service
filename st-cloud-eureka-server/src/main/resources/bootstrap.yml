@@ -1,0 +1,34 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      default: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+    name: st-cloud-eureka-server
+  profiles:
+    active: dev
+management:
+  endpoint:
+    service-registry:
+      enabled: true
+    shutdown:
+      enabled: true
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: test
+
+---
+spring:
+  profiles: prod
+
+# 通过eureka.client.register-with-eureka=false eureka.client.fetch-register=false来表明当前服务是一个eureka的server服务

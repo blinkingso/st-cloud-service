@@ -1,0 +1,37 @@
+server:
+  port: 8800
+
+spring:
+  application:
+    name: st-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/blinkingso/st-cloud-config-repo
+          default-label: master
+          search-paths: st-config
+      enabled: true
+  profiles:
+    active: dev
+
+
+eureka:
+  client:
+    service-url:
+      default: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: true
+
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: test
+
+---
+spring:
+  profiles: prod

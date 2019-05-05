@@ -1,0 +1,15 @@
+server:
+  port: 9002
+
+eureka:
+  client:
+    service-url:
+      default: http://localhost:8761/eureka/
+
+
+spring:
+  application:
+    name: st-cloud-feign
+feign:
+  hystrix:
+    enabled: true

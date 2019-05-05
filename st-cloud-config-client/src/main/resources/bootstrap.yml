@@ -1,0 +1,20 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: st-cloud-config-client
+  cloud:
+    config:
+      enabled: true
+      #uri: http://localhost:8800/
+      profile: dev
+      label: master
+      discovery:
+        service-id: st-cloud-config-server
+        enabled: true
+
+eureka:
+  client:
+    service-url:
+      default: http://localhost:8761/eureka/
