@@ -72,6 +72,8 @@
         <module>./st-cloud-ribbon</module>
         <module>./st-cloud-zuul</module>
         <module>./st-cloud-feign</module>
+        <module>./st-cloud-service-mybatis</module>
+        <module>./st-cloud-util</module>
     </modules>
 
 <!--    <pluginRepositories>-->

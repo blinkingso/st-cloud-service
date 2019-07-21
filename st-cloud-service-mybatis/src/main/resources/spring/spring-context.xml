@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--使用cglib代理-->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <!--<bean class="com.shitu.cloud.mybatis.bean.User" id="user">-->
+    <!--<constructor-arg value="lyb i love you"/>-->
+    <!--</bean>-->
+
+    <bean class="com.shitu.cloud.mybatis.bean.User" id="user" c:lyb="lyb-i love you i want you to be my deep love."/>
+
+    <util:list id="userList">
+        <bean class="com.shitu.cloud.mybatis.bean.User" c:lyb="i"/>
+        <bean class="com.shitu.cloud.mybatis.bean.User" c:lyb="love"/>
+        <bean class="com.shitu.cloud.mybatis.bean.User" c:lyb="you"/>
+        <bean class="com.shitu.cloud.mybatis.bean.User" c:lyb="lyb"/>
+    </util:list>
+
+    <util:map id="map">
+        <entry>
+            <key>
+                <bean class="java.lang.String" c:value="string"/>
+            </key>
+            <value type="java.lang.String">ccc</value>
+        </entry>
+    </util:map>
+
+    <!--配置属性环境变量-->
+    <util:properties id="javaProp">
+        <prop key="java_home">/usr/local/java</prop>
+    </util:properties>
+
+    <bean class="com.shitu.cloud.mybatis.bean.User" id="user2" c:userList-ref="userList"/>
+    <bean class="com.shitu.cloud.mybatis.bean.User" id="user3" c:userList-ref="userList" p:lyb="lyblg">
+        <!--使用cglib代理-->
+        <aop:scoped-proxy/>
+    </bean>
+
+    <bean id="userService" class="com.shitu.cloud.mybatis.service.impl.UserServiceImpl"/>
+
+    <bean id="logAspect" class="com.shitu.cloud.mybatis.aop.LogAspect"/>
+
+    <aop:config>
+        <aop:aspect ref="logAspect">
+            <aop:pointcut id="log" expression="execution(* *.register(..))"/>
+            <aop:before method="before" pointcut-ref="log"/>
+            <aop:before method="after" pointcut-ref="log"/>
+            <!--<aop:around method="around" pointcut-ref="log"/>-->
+        </aop:aspect>
+    </aop:config>
+
+    <import resource="spring-profile-beans.xml"/>
+    <import resource="spring-webflow.xml"/>
+
+    <!--属性占位符配置-->
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations" value="classpath:*.properties"/>
+    </bean>
+</beans>

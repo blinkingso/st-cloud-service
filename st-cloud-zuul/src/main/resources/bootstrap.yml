@@ -1,0 +1,23 @@
+#zuul:
+#  routes:
+#    sa:
+#      path: /sa/**
+#      serviceId: ST-CLOUD-EUREKA-CLIENT
+#    sb:
+#      path: /sb/**
+#      serviceId: ST-CLOUD-RIBBON
+zuul:
+  routes:
+    client:
+      path: /client/**
+      serviceId: ST-CLOUD-EUREKA-CLIENT
+spring:
+  application:
+    name: st-cloud-zuul
+---
+spring:
+  profiles: zone1
+
+---
+spring:
+  profiles: zone2
