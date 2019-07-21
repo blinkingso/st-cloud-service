@@ -29,4 +29,7 @@ HELP.md
 .vscode/
 
 ### classes ###
-classes
+*/classes/*
+*/target/*
+classes/*
+target/*
