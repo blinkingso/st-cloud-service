@@ -8,17 +8,22 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
     </parent>
-
-    <groupId>com.shitu.cloud.eureka.client</groupId>
-    <artifactId>st-cloud-eureka-client</artifactId>
+    <groupId>com.shitu.cloud.mybatis</groupId>
+    <artifactId>st-cloud-service-mybatis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>st-cloud-eureka-client</name>
-    <description>st-cloud-eureka-client</description>
+    <name>st-cloud-service-mybatis</name>
+    <description>st-cloud-service-mybatis</description>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
         <dependency>
@@ -27,25 +32,27 @@
         </dependency>
 
         <dependency>
-<<<<<<< HEAD
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.0.1</version>
-=======
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>3.0-alpha-1</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
->>>>>>> 00e950d4e94b828c3c00b85215535b471cb66cc9
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.nekohtml</groupId>
+            <artifactId>nekohtml</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.webflow</groupId>
+            <artifactId>spring-webflow</artifactId>
+            <version>2.5.1.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 </project>

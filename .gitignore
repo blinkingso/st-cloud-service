@@ -28,3 +28,9 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+### classes ###
+*/classes/*
+*/target/*
+classes/*
+target/*
