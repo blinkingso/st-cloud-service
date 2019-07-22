@@ -37,4 +37,8 @@
 
     </dependencies>
 
+    <build>
+        <finalName>st-cloud-config-client</finalName>
+    </build>
+
 </project>

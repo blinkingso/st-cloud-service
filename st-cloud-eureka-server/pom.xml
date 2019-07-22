@@ -22,4 +22,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>st-cloud-erueka-server</finalName>
+    </build>
+
 </project>

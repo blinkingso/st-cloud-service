@@ -40,4 +40,9 @@
             <version>1.5.18</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>st-cloud-ribbon</finalName>
+    </build>
+
 </project>

@@ -39,4 +39,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>st-cloud-feign</finalName>
+    </build>
+
 </project>

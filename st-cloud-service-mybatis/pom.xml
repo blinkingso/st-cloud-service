@@ -55,4 +55,8 @@
 
     </dependencies>
 
+    <build>
+        <finalName>st-cloud-service-mybatis</finalName>
+    </build>
+
 </project>

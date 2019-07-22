@@ -43,4 +43,8 @@
 
     </dependencies>
 
+    <build>
+        <finalName>st-cloud-config-server</finalName>
+    </build>
+
 </project>
