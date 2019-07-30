@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: st-cloud-service-messaging
+  profiles:
+    active: zone1

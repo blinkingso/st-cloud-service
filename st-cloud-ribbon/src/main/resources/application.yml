@@ -1,10 +1,29 @@
 server:
   port: 9001
-
+  servlet:
+    context-path: /api/
 eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    metadata-map:
+      zone: zone1, zone2
   client:
+    fetch-registry: true
+    register-with-eureka: true
+    prefer-same-zone-eureka: true
+    region: region-east
+    availability-zones:
+      region-east: zone1, zone2
     service-url:
-      default: http://localhost:8761/eureka/
+      zone1: http://localhost:8761/eureka/
+      zone2: http://localhost:8762/eureka/
 spring:
   application:
     name: st-cloud-ribbon
+  thymeleaf:
+    cache: false
+    prefix: classpath:static/
+    suffix: .html
+    mode: HTML
+    enabled: true

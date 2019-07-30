@@ -18,7 +18,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableHystrix
 public class FeignApplication {
 
-    public static void main(String[] args) {
+    public static void  main(String[] args) {
         SpringApplication.run(FeignApplication.class, args);
     }
 

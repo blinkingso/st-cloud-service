@@ -23,7 +23,7 @@
     </dependencies>
 
     <build>
-        <finalName>st-cloud-erueka-server</finalName>
+        <finalName>st-cloud-eureka-server</finalName>
     </build>
 
 </project>

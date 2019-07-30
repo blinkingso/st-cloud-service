@@ -11,8 +11,14 @@ import org.springframework.stereotype.Component;
 public class HelloServiceHystrix implements HelloService {
 
     @Override
-    public String sayHello(String name) {
+    public String sayHello() {
         System.out.println("服务sayHello调用失败");
         return "failed";
+    }
+
+    @Override
+    public boolean register(String user) {
+        System.out.println("register 接口调用失败 : " + user);
+        return false;
     }
 }

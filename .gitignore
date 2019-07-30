@@ -1,4 +1,5 @@
 HELP.md
+**/target
 /target/
 .mvn/
 
@@ -29,7 +30,4 @@ HELP.md
 .vscode/
 
 ### classes ###
-*/classes/*
-*/target/*
-classes/*
-target/*
+/classes/

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:flow="http://www.springframework.org/schema/webflow-config"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/webflow-config
+       http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
+
+    <!-- 配置流程注册表 -->
+    <flow:flow-registry id="flowRegistry" base-path="/WEB-INF/flows">
+        <flow:flow-location-pattern value="*-flow.xml"/>
+    </flow:flow-registry>
+
+    <!-- 装配流程执行器 -->
+    <flow:flow-executor id="executor" flow-registry="flowRegistry">
+
+    </flow:flow-executor>
+
+    <!-- 配置请求 -->
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+        <property name="flowRegistry" ref="flowRegistry"/>
+    </bean>
+
+</beans>

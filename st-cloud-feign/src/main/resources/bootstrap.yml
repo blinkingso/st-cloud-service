@@ -1,0 +1,24 @@
+server:
+  port: 9002
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    availability-zones:
+      zone: zone1, zone2
+    region: region-east
+    service-url:
+      zone1: http://localhost:8761/eureka/
+      zone2: http://localhost:8762/eureka/
+  instance:
+    metadata-map:
+      region-east: zone1, zone2
+    hostname: localhost
+
+spring:
+  application:
+    name: st-cloud-feign
+feign:
+  hystrix:
+    enabled: true

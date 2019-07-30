@@ -1,0 +1,6 @@
+/app/git-repo/st-cloud-service/st-cloud-util/src/main/java/com/shitu/cloud/service/util/http/HttpUtil.java
+/app/git-repo/st-cloud-service/st-cloud-util/src/main/java/com/shitu/cloud/service/util/servlet/DefaultAsyncListener.java
+/app/git-repo/st-cloud-service/st-cloud-util/src/main/java/com/shitu/cloud/service/util/servlet/AsyncRunningServlet.java
+/app/git-repo/st-cloud-service/st-cloud-util/src/main/java/com/shitu/cloud/service/util/servlet/AppContextListener.java
+/app/git-repo/st-cloud-service/st-cloud-util/src/main/java/com/shitu/cloud/service/util/servlet/AsyncRequestProcessor.java
+/app/git-repo/st-cloud-service/st-cloud-util/src/main/java/com/shitu/cloud/service/util/StCloudUtilApplication.java
